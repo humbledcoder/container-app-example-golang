@@ -1,6 +1,6 @@
 .git
 .dockerignore
 .gitignore
-Dockfile*
+Dockerfile*
 LICENSE
 README.md
