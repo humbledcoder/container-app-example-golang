@@ -1,20 +1,15 @@
-FROM golang:1.20-alpine3.17 as builder
-
-# RUN apk add build-base
+FROM golang:1.20-bullseye as builder
 
 WORKDIR /app
 
 COPY . /app/
 
-# RUN GOOS=linux go build -tags musl -o main .
-RUN GOOS=linux go build -o main .
+RUN go build -o main .
 
-FROM alpine:3.17
+FROM debian:bullseye
 
-# ENV TZ Asia/Shanghai
-# RUN apk add tzdata && cp /usr/share/zoneinfo/${TZ} /etc/localtime && echo ${TZ} > /etc/timezone
-
-# RUN apk add ca-certificates
+ENV TZ Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 WORKDIR /app
 
