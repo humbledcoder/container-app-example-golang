@@ -1,0 +1,15 @@
+{
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "golang.go",
+                "GitHub.copilot",
+                "GitHub.copilot-chat",
+                "streetsidesoftware.code-spell-checker"
+            ]
+        }
+    }
+}
