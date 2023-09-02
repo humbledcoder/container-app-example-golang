@@ -1,13 +1,15 @@
 {
+    "name": "Go",
     "build": {
         "dockerfile": "Dockerfile"
     },
     "customizations": {
         "vscode": {
             "extensions": [
-                "golang.go",
+                "eamodio.gitlens",
                 "GitHub.copilot",
                 "GitHub.copilot-chat",
+                "golang.go",
                 "streetsidesoftware.code-spell-checker"
             ]
         }
