@@ -1,4 +1,4 @@
-FROM golang:1.21-bookworm as builder
+FROM golang:1.21-alpine as builder
 
 WORKDIR /app
 
@@ -6,10 +6,7 @@ COPY . /app/
 
 RUN go build -o main .
 
-FROM debian:bookworm
-
-ENV TZ Asia/Shanghai
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+FROM alpine:3.18
 
 WORKDIR /app
 

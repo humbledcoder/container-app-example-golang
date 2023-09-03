@@ -1,4 +1,3 @@
-FROM golang:1.21-bookworm
+FROM golang:1.21-alpine
 
-ENV TZ Asia/Shanghai
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN apk add git
